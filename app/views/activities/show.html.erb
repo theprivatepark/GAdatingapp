@@ -1,0 +1,12 @@
+<h2><%= @activity.name.titleize %></h2>
+
+<div>
+  <ul>
+    <li> Location: <%= @activity.location.titleize %> </li>
+    <li> Description: <%= @activity.description %>  </li>
+    <li> Has Meal? <%= @activity.has_meal %>  </li>
+    <li> Has Alcohol? <%= @activity.has_alcohol%>  </li>
+  </ul>
+</div>
+
+<%= link_to "Back to Activities", activities_path %>

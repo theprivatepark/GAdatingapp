@@ -1,0 +1,9 @@
+<h2> New User Form </h2>
+<br>
+<%= form_for @user do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.submit "Submit New User" %>
+<% end %>
+<br>
+<%= link_to "Back to Users", users_path%>
