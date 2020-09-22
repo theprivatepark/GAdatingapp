@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <div class = "header"> 
+  <ul>
+      <li> <%= link_to "Activity Homepage", activities_path %> </li>
+      <li> <%= link_to "All Users Hompage", users_path %> </li>
+      <li> <%= link_to "All Romantic Dates Homepage", romantic_dates_path %> </li>
+  </ul>
+  </div>
+
     <%= yield %>
   </body>
 </html>

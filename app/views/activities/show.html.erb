@@ -9,4 +9,10 @@
   </ul>
 </div>
 
-<%= link_to "Back to Activities", activities_path %>
+
+<%= link_to "Edit Activity", edit_activity_path(@activity) %>
+<br>
+<%= link_to "Delete Activity", activity_path(@activity),
+            method: "delete",
+            data: {:confirm => "ARE YOU SURE?"} %>
+            <br>

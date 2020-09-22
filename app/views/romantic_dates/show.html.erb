@@ -1,0 +1,12 @@
+
+<h1> <%= "#{@romanticdate.initiator.name.titlecase}" " & " "#{@romanticdate.acceptor.name.titlecase}" "'s " "Romantic Date" %> </h1>
+
+<li> <%= @romanticdate.activity.name %> </li>
+<li><%= @romanticdate.outcome %> </li>
+<br>
+
+<%= link_to "Edit Romantic Date", edit_romantic_date_path(@romanticdate) %>
+<br>
+<%= link_to  "Delete Romantic Date", romantic_date_path(@romanticdate),
+                  method: "delete", 
+                  data: {:confirm => "ARE YOU SURE?"} %>

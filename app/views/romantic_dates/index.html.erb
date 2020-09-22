@@ -3,13 +3,12 @@
 <div>
   <ul>
     <% @romanticdates.each do |romanticdate| %>
-      <li> Initiator: <%= link_to romanticdate.initiator.name, user_path(romanticdate.initiator) %> </li>
-      <li> Acceptor: <%= link_to romanticdate.acceptor.name, user_path(romanticdate.acceptor) %> </li>
-      <li> Activity: <%= link_to romanticdate.activity.name, activity_path(romanticdate.activity)%> </li>
+    <p><%= link_to "Romantic Date", romantic_date_path(romanticdate) %></p>
+      <li> Initiator: <%= link_to romanticdate.initiator.name.titleize, user_path(romanticdate.initiator) %> </li>
+      <li> Acceptor: <%= link_to romanticdate.acceptor.name.titleize, user_path(romanticdate.acceptor) %> </li>
+      <li> Activity: <%= link_to romanticdate.activity.name.titleize, activity_path(romanticdate.activity)%> </li>
       <li> Outcome: <%= romanticdate.outcome %> </li>
       <br>
     <% end %>
   </ul>
 </div>
-
-<%= link_to "All Users", users_path %>

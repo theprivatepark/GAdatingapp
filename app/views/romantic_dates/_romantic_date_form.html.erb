@@ -1,0 +1,12 @@
+
+  <%= form_for  @romanticdate do |f| %>
+  <%= f.label :name, "Initiator:" %>
+  <%= f.collection_select(:initiator_id, User.all, :id, :name)%>
+  <%= f.label :name, "Acceptor:" %>
+  <%= f.collection_select(:acceptor_id, User.all, :id, :name)%>
+  <%= f.label :activity, "Activity" %>
+  <%= f.collection_select(:activity_id, Activity.all, :id, :name) %>
+  <%= f.label :outcome, "Outcome:" %>
+  <%= f.text_field :outcome %>
+  <%= f.submit button_text %>
+<% end %>
