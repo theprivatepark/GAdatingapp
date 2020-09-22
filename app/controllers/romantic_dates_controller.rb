@@ -1,11 +1,12 @@
 class RomanticDatesController < ApplicationController
 
+  before_action :find_romantic_date, only: [:show, :edit, :update, :destroy]
+
   def index
     @romanticdates = RomanticDate.all
   end
 
   def show
-    @romanticdate = RomanticDate.find(params[:id])
   end
 
   def new
@@ -18,17 +19,15 @@ class RomanticDatesController < ApplicationController
   end
 
   def edit
-    @romanticdate = RomanticDate.find(params[:id])
   end
 
   def update
-    @romanticdate = RomanticDate.find(params[:id])
     @romanticdate.update(date_params)
     redirect_to romantic_date_path(@romanticdate)
   end
 
   def destroy
-    RomanticDate.destroy(params[:id])
+    @romanticdate.destroy
     redirect_to romantic_dates_path
   end
 
@@ -37,5 +36,9 @@ class RomanticDatesController < ApplicationController
 
   def date_params
     params.require(:romantic_date).permit(:initiator_id, :acceptor_id, :activity_id, :outcome)
+  end
+
+  def find_romantic_date
+    @romanticdate = RomanticDate.find(params[:id])
   end
 end

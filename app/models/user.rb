@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   has_many :accepted_dates, foreign_key: :acceptor_id, class_name: 'RomanticDate', dependent: :destroy
   has_many :initators, through: :accepted_dates
+
+  validates :name, presence: true
 end
